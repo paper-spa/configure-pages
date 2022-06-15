@@ -8096,7 +8096,8 @@ async function enablePages({ repositoryNwo, githubToken }) {
       {
         headers: {
           Accept: 'application/vnd.github.v3+json',
-          Authorization: `Bearer ${githubToken}`
+          Authorization: `Bearer ${githubToken}`,
+          'Content-type': 'application/json'
         },
         validateStatus: false,
       }
