@@ -13,7 +13,8 @@ async function enablePages({ repositoryNwo, githubToken }) {
           Accept: 'application/vnd.github.v3+json',
           Authorization: `Bearer ${githubToken}`
         },
-        validateStatus: false
+        validateStatus: false,
+        body: JSON.stringify({ source: {branch: "main", path: "/docs"} }),
       }
     )
     core.info(response)

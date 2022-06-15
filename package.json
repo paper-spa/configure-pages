@@ -21,6 +21,7 @@
     "@actions/core": "^1.8.2",
     "axios": "^0.27.2",
     "axios-retry": "^3.2.5",
+    "blueimp-md5": "^2.19.0",
     "ncc": "^0.3.6"
   },
   "devDependencies": {
