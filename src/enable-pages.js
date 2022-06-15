@@ -12,9 +12,12 @@ async function enablePages({ repositoryNwo, githubToken }) {
         headers: {
           Accept: 'application/vnd.github.v3+json',
           Authorization: `Bearer ${githubToken}`
-        }
+        },
+        validateStatus: false
       }
     )
+    core.info(response)
+    console.log(response)
     core.info('Created pages site')
   } catch (error) {
     if (error.response && error.response.status === 409) {
