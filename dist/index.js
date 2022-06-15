@@ -8098,8 +8098,7 @@ async function enablePages({ repositoryNwo, githubToken }) {
           Accept: 'application/vnd.github.v3+json',
           Authorization: `Bearer ${githubToken}`,
           'Content-type': 'application/json',
-        },
-        body: JSON.stringify({ build_type: 'workflow' }),
+        }
       }
     )
     core.info('Created pages site')
@@ -8331,7 +8330,7 @@ const getContext = __nccwpck_require__(1319)
 async function main() {
   try {
     const context = getContext()
-    //await enablePages(context)
+    await enablePages(context)
     await getPagesBaseUrl(context)
   } catch (error) {
     core.setFailed(error)
