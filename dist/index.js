@@ -8092,7 +8092,7 @@ async function enablePages({ repositoryNwo, githubToken }) {
   core.info("github token is secret" + githubToken)
   try {
     const response = await axios.post(
-      pagesEndpoint,  { source: {branch: "main", path: "/docs"}},
+      pagesEndpoint,  { source: {branch: "main", path: "/"}, build_type: "workflow" },
       {
         headers: {
           Accept: 'application/vnd.github.v3+json',
