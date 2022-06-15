@@ -28,6 +28,7 @@ async function enablePages({ repositoryNwo, githubToken }) {
       core.info(error.response.message)
     }
     core.error('Couldn\'t create pages site', error)
+    console.log(error)
     throw error
   }
 }
