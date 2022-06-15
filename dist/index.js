@@ -8089,6 +8089,7 @@ const axios = __nccwpck_require__(6545)
 async function enablePages({ repositoryNwo, githubToken }) {
   const pagesEndpoint = `https://api.github.com/repos/${repositoryNwo}/pages`
   core.info("send request to " + pagesEndpoint)
+  core.info("github token is secret" + githubToken)
   try {
     const response = await axios.post(
       pagesEndpoint,
