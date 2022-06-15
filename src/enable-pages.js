@@ -11,8 +11,7 @@ async function enablePages({ repositoryNwo, githubToken }) {
       {
         headers: {
           Accept: 'application/vnd.github.v3+json',
-          Authorization: `Bearer ${githubToken}`,
-          'Content-type': 'application/json',
+          Authorization: `Bearer ${githubToken}`
         }
       }
     )
@@ -22,7 +21,9 @@ async function enablePages({ repositoryNwo, githubToken }) {
       core.info('Pages site exists')
       return
     }
-
+    if (error.response && error.response.message){
+      core.info(error.response.message)
+    }
     core.error('Couldn\'t create pages site', error)
     throw error
   }
